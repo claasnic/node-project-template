@@ -1,0 +1,7 @@
+*.tgz
+Gruntfile.*
+.travis.yml
+/lib-src/
+/lib-cov/
+/test/
+/test-src/
