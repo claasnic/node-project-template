@@ -7,6 +7,7 @@ wrench = require 'wrench'
 instrument = require 'jscoverage/lib/instrument'
 
 COVERALLS = true
+LINT = true
 
 module.exports = (grunt) ->
   grunt.initConfig
@@ -66,8 +67,8 @@ module.exports = (grunt) ->
     mochaTest:
       lib:
         options:
-          require: 'lib-cov/init-cov.js'
-        src: ['test/**/*.js']
+          require: ['lib-cov/init-cov.js', 'test/index.js']
+        src: ['test/**/*.js', '!test/index.js']
   
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-copy'
@@ -156,7 +157,7 @@ module.exports = (grunt) ->
     initStream.end done
   
   grunt.registerTask 'test', 'Build, generate coverage, run tests.', ->
-    process.env.NODE_NAME_COV = true
+    process.env.NPM_NAME_COV = true
     if process.env.TRAVIS
       if COVERALLS
         grunt.config.set 'mochaTest.lib.options.reporter', 'mocha-lcov-reporter'
@@ -180,6 +181,9 @@ module.exports = (grunt) ->
       grunt.log.writeln stdout + stderr
       done err
   
-  grunt.registerTask 'build', ['clean', 'jshint', 'coffeelint', 'copy', 'coffee']
+  grunt.registerTask 'build', ->
+    grunt.task.run ['clean']
+    grunt.task.run ['jshint', 'coffeelint'] if LINT
+    grunt.task.run ['copy', 'coffee']
   
   grunt.registerTask 'default', ['build']
