@@ -130,7 +130,7 @@ You can watch the test-runner executing your suites and tests, flagging passes a
 
 If you reached a milestone that fixes some bugs or brings new functionality and all your tests pass, it's time to publish! Check out the [NPM docs](https://npmjs.org/doc/) for commands that help you with publishing, most notably [version](https://npmjs.org/doc/cli/npm-version.html) and [publish](https://npmjs.org/doc/cli/npm-publish.html). Try sticking to [Semantic Versioning](http://semver.org/) when naming your release versions.
 
-Use `npm version major|minor|patch` to bump the package's version (choose one of major|minor|patch, according to Semantic Versioning). This also creates a new tag commit, if you are working under git. Then it's just `npm publish` and your package is up on NPM's registry!
+Record the changes of your new version in [CHANGES.md](CHANGES.md) and then use `npm version major|minor|patch` to bump the package's version (choose one of major|minor|patch, according to Semantic Versioning). This also creates a new tag commit, if you are working under git (the repo must be in a clean state, so make sure you have committed all your changes). Then it's just `npm publish` and your package is up on NPM's registry!
 
 If you are publishing for the first time, you must tell your local npm command about your NPM account, just run `npm adduser` and answer the prompts. This will either create or verify an account on NPM's registry.
 
