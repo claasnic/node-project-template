@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/ORG-OR-USER/REPO-NAME/badge.png)](https://coveralls.io/r/ORG-OR-USER/REPO-NAME)
 [![Dependency Status](https://david-dm.org/ORG-OR-USER/REPO-NAME.png)](https://david-dm.org/ORG-OR-USER/REPO-NAME)
 
-This is a template for [NodeJS](http://nodejs.org/ "node.js") projects, as used by the [webplatform.org IRC bot framework](https://github.com/webplatform/irc-apparatus). The template features the following:
+This is a template for [NodeJS](http://nodejs.org/ "node.js") projects. The template features the following:
 
 * The main source files can be written in JavaScript (JS) or [CoffeeScript](http://coffeescript.org/ "CoffeeScript") (CS), files can be mixed
 * Same for the test sources
@@ -24,7 +24,7 @@ You obviously need NodeJS for this to work (only tested with v0.10.x), get it fr
 
 1.  If you want to host your project on GitHub, [create](https://github.com/new "Create a New Repository") a new empty repository and clone it locally.  
     If you don't want to use GitHub, you should at least create a git repository locally. It will help you track the changes you make (and easily undo them if something breaks) and it let's you try out experiments on your code in separate branches.
-2.  Download a [packaged version](https://github.com/webplatform/node-project-template/archive/master.zip) of this repo and unzip it into your directory.
+2.  Download a [packaged version](https://github.com/frozenice-/node-project-template/archive/master.zip) of this repo and unzip it into your directory.
 3.  Empty this `README.md` file, but keep the badges you want (the first four lines). Fill it with your documentation later!  
     The following variables need to be replaced for the badges to work:
     * `NPM-NAME` - Name of your module on NPM.
