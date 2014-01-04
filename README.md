@@ -139,7 +139,7 @@ If you are publishing for the first time, you must tell your local npm command a
 You can try out packages that aren't released on NPM yet. If there is a repository on GitHub, just link to it in your `package.json` file like so:
 `"NPM-NAME": "https://api.github.com/repos/ORG-OR-USER/REPO-NAME/tarball"`
 
-If you are building the package locally and want to use it in another local project, use NPM's [pack](https://npmjs.org/doc/cli/npm-pack.html) command. Just run `npm pack` in the package's directory - it will be built, packaged and added to the local npm cache (if there already is a package with the same name and version in the cache - either from downloading off NPM or a previous pack command - it will be overridden). Then, in your project's folder, run `npm install` and it will pull the package from your cache (make sure you are depending on the correct version). You can remove a cached package via `npm cache rm NPM-NAME`.
+If you are building the package locally and want to use it in another local project, use NPM's [pack](https://npmjs.org/doc/cli/npm-pack.html) command. Just run `npm pack` in the package's directory - it will be built, packaged and added to the local npm cache (if there already is a package with the same name and version in the cache - either from downloading off NPM or a previous pack command - it will be overridden). Then, in your project's folder, run `npm install NPM-NAME` and it will pull the package from your cache (make sure you are depending on the correct version). You can remove a cached package via `npm cache rm NPM-NAME`.
 
 ## TODOs for this project template and this README
 
