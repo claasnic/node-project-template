@@ -55,7 +55,7 @@ You obviously need NodeJS for this to work (only tested with v0.10.x), get it fr
 7.  Sign into [Coveralls](https://coveralls.io/repos/new) (it's free for public repos and uses your GitHub account) and [add your repo](https://coveralls.io/repos/new), you may need to resync here, too.
     
     If you don't want to use Coveralls, edit [Gruntfile.coffee](Gruntfile.coffee) and set `COVERALLS = false` at the top. This will still generate local coverage statistics.
-8.  Replace the `NPM_NAME_COV` variable in [Gruntfile.coffee](Gruntfile.coffee) (line 159) and [index.js](index.js) (first line) with a custom one. This makes it easy to tell exactly which packages should be run under code coverage (your dependencies could also contain support for code coverage). The name of the environment variable should contain the value of your `NPM-NAME` (using only alphanumeric characters and underscore) and end in _COV or _COVERAGE.
+8.  Replace the `NPM_NAME_COV` variable in [Gruntfile.coffee](Gruntfile.coffee) (line 160) and [index.js](index.js) (first line) with a custom one. This makes it easy to tell exactly which packages should be run under code coverage (your dependencies could also contain support for code coverage). The name of the environment variable should contain the value of your `NPM-NAME` (using only alphanumeric characters and underscore) and end in _COV or _COVERAGE.
 9.  The [CHANGES.md](CHANGES.md) file can be used to record a changelog for when you release new version. If you don't want to use it, simply delete it.
 
 
