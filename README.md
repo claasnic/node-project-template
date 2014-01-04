@@ -122,18 +122,28 @@ This will produce output like the following:
 ```
 
 You can watch the test-runner executing your suites and tests, flagging passes and failures. It will also produce some additional files under the `test` directory:
-* `coverage.html` - Contains all your main source files. It displays % coverage and SLOC stats and highlights lines, which aren't covered yet.
+* `coverage.html` - Contains all your main source files. It displays % coverage and SLOC stats per file and highlights lines, which aren't covered yet.
 * `slow.txt` - Lists all your suites and tests by how long they ran. Useful to find slow tests.
 * `lcov.txt` - This format can be imported by a number of code coverage tools.
 
 ### Publishing
 
-If you reached a milestone that fixes some bugs or brings new functionality and all your tests pass, it's time to publish! Check out the [NPM docs](https://npmjs.org/doc/) for commands that help you with publishing, most notably `version` and `publish`. Try sticking to [Semantic Versioning](http://semver.org/) when naming your release versions.
+If you reached a milestone that fixes some bugs or brings new functionality and all your tests pass, it's time to publish! Check out the [NPM docs](https://npmjs.org/doc/) for commands that help you with publishing, most notably [version](https://npmjs.org/doc/cli/npm-version.html) and [publish](https://npmjs.org/doc/cli/npm-publish.html). Try sticking to [Semantic Versioning](http://semver.org/) when naming your release versions.
+
+Use `npm version major|minor|patch` to bump the package's version (choose one of major|minor|patch, according to Semantic Versioning). This also creates a new tag commit, if you are working under git. Then it's just `npm publish` and your package is up on NPM's registry!
+
+If you are publishing for the first time, you must tell your local npm command about your NPM account, just run `npm adduser` and answer the prompts. This will either create or verify an account on NPM's registry.
+
+### Using a package's development version
+
+You can try out packages that aren't released on NPM yet. If there is a repository on GitHub, just link to it in your `package.json` file like so:
+`"NPM-NAME": "https://api.github.com/repos/ORG-OR-USER/REPO-NAME/tarball"`
+
+If you are building the package locally and want to use it in another local project, use NPM's [pack](https://npmjs.org/doc/cli/npm-pack.html) command. Just run `npm pack` in the package's directory - it will be built, packaged and added to the local npm cache (if there already is a package with the same name and version in the cache - either from downloading off NPM or a previous pack command - it will be overridden). Then, in your project's folder, run `npm install` and it will pull the package from your cache (make sure you are depending on the correct version). You can remove a cached package via `npm cache rm NPM-NAME`.
 
 ## TODOs for this project template and this README
 
-* flesh out publishing
+* maybe extra NPM script for building (instead of npm i)
 * refine default lint options
 * mocha-multi replacement (kills grunt's stdout)
-* npm pack / direct tgz link
 * this as grunt-init / yo
